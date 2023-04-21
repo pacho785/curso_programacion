@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="ESTILOS.css">
+    <meta charset="UTF-8">
+    <script>
+        function aleatoria(min, max){ return Math.floor(Math.random() * (max - min + 1) + min); } // Función que devuelve un número aleatorio entre min y max, utilizando Math.random() y Math.floor().
+        function eleccion(jugada) { // Función que devuelve el nombre de la jugada correspondiente a un número dado.
+            let resultado = "";
+            if (jugada == 1) { resultado = "piedra"; } // Si el número es 1, se asigna "piedra" a la variable resultado.
+            else if (jugada == 2) { resultado = "papel"; } // Si el número es 2, se asigna "papel" a la variable resultado.
+            else if (jugada == 3) { resultado = "tijera"; } // Si el número es 3, se asigna "tijera" a la variable resultado.
+            else { resultado = "MAL ELEGIDO"; } // Si el número no es 1, 2 o 3, se asigna "MAL ELEGIDO" a la variable resultado.
+            return resultado; // Se devuelve el valor de la variable resultado.
+            }
+        let jugador = 0; // Variable que representa la elección del jugador humano.
+        let pc = aleatoria(1,3); // Variable que representa la elección aleatoria de la computadora entre min y max, utilizando la función aleatoria().
+            jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijera") // Pedimos al usuario que elija piedra, papel o tijera mediante un prompt
+        alert("pc eleige: " + eleccion(pc)); // Se muestra una alerta en el navegador con el nombre de la jugada elegida por la computadora, utilizando la función eleccion().
+        alert("tu eliges: " + eleccion(jugador)); // Se muestra una alerta en el navegador con el nombre de la jugada elegida por el jugador, utilizando la función eleccion().
+        if (pc == jugador) { alert("Ponte vergas que empataste"); } // Si la jugada de la computadora es igual a la jugada del jugador, se muestra una alerta en el navegador con el mensaje "Ponte vergas que empataste".
+        else if (jugador == 1 && pc == 3) { alert("YOU WIN"); } // Si la jugada del jugador es "piedra" (1) y la jugada de la computadora es "tijera" (3), se muestra una alerta en el navegador con el mensaje "YOU WIN".
+        else if (jugador == 2 && pc == 1) { alert("YOU WIN"); } // Si la jugada del jugador es "papel" (2) y la jugada de la computadora es "piedra" (1), se muestra una alerta en el navegador con el mensaje "YOU WIN".
+        else if (jugador == 3 && pc == 2) { alert("YOU WIN"); } // Si la jugada del jugador es "tijera" (3) y la jugada de la computadora es "papel" (2), se muestra una alerta en el navegador con el mensaje "YOU WIN".
+        else { alert("YOU LOSE :("); } // Si ninguna de las condiciones anteriores se cumple, se muestra una alerta en el navegador con el mensaje "YOU LOSE :(".
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pidra pael o tijeras</title>
+</head>
+<body>
+    <h1>Piedra Papel O tijeras</h1>
+    <p>
+    <button><a href="PAGINA.HTML">LA BIENVENIDA</a></button>
+    </p>
+</body>
+</html>
